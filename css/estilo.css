@@ -1,16 +1,94 @@
-
-
-body{
-	font-family: 'Noto Sans JP', tahoma;
-	background: #380D26;
-	color: #EBDCD3;
-	color: #FFFFFF;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	font-family:'Poppins', sans-serif ;
+	
+}
+body{	
+	min-height: 1000px;
+	background: #000	;
 }
 
-header .logo {
-	text-align: center;
+header{
+	position: fixed;
+	top: 0;
+	left: 0;	
+	width: 100%;
+	display: flex;
+	justify-content: space-between; /* flex-start flex-end center space-around */
+	align-items: center; /* flex-start flex-end */
+	padding: 40px 100px; /* 40px arriba y abajo 100px der e izq
+	z-index: 1000; /* nivel de apilamiento */
+	transition: 0.6s;
+	background: #fff; /* sera corregido */
 }
 
-header h1{
-	font-size:1.2em;
+header .logo{
+	
+	font-weight: 700; /* peso numerico */
+	color: #fff;
+	color: #000; /* sera corregido */
+	text-decoration: none;
+	font-size: 2em; /* doble del tamaño de la fuente actual */
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: 0.6s;
+
 }
+
+header ul{
+	display: flex;
+	/*justify-content: center;
+	align-items: center;*/
+}
+
+header ul li{
+	/* position: relative;*/
+	list-style: none;
+}
+
+header ul li a{
+	/* position: relative; */
+	margin: 0 15px;
+	text-decoration: none;
+	color: #fff;
+	color: #000; /* sera corregido */
+	letter-spacing: 2px;
+	font-weight: 400;
+	/* transition: 0.6s; */
+}
+
+.banner{
+	/* position: relative; */
+	color: #fff;
+	width: 100%;
+	min-height: 100vh; /* 100 = altura del viewport */ 
+	background: url(../assets/bg.jpg);
+	background-size: cover; /* contain */
+	display: flex;
+	justify-content:center;
+	align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
