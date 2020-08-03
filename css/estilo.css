@@ -6,6 +6,9 @@
 	font-family:'Poppins', sans-serif ;
 	
 }
+html{
+	scroll-behavior: smooth; /* safari no soporta */
+}
 body{	
 	min-height: 1000px;
 	background: #000	;
@@ -19,7 +22,7 @@ header{
 	display: flex;
 	justify-content: space-between; /* flex-start flex-end center space-around */
 	align-items: center; /* flex-start flex-end */
-	padding: 40px 100px; /* 40px arriba y abajo 100px der e izq
+	padding: 40px 100px; /* 40px arriba y abajo 100px der e izq */
 	z-index: 1000; /* nivel de apilamiento */
 	transition: 0.6s;
 	background: #fff; /* sera corregido */
@@ -62,18 +65,102 @@ header ul li a{
 
 .banner{
 	/* position: relative; */
-	color: #fff;
+	/*color: #fff; */
 	width: 100%;
 	min-height: 100vh; /* 100 = altura del viewport */ 
 	background: url(../assets/bg.jpg);
-	background-size: cover; /* contain */
 	display: flex;
-	justify-content:center;
-	align-items: center;
+	justify-content: center;
+	align-items: center;;
+	background-size: cover; /* contain */
+	
 }
 
+.banner h2{
+	color: #fff;
+	font-size: 80px;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 1em; 
+}
 
+.banner h2 span{
+	color: #4978ff;
+}
 
+.sec{
+	background: #fff;
+	padding: 100px;
+	min-height:100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.sec .content{
+	position: relative; 
+	text-align: center;
+	width: 100%; /* ? */
+	
+
+}
+
+.mxw800p{
+	max-width: 800px;
+	margin: 0 auto;  /* centra el contenido */
+
+}
+h3{
+	font-size: 40px;
+	font-weight: 200;
+	margin-bottom: 10px;
+}
+p{
+	font-size:18px;
+	font-weight: 300;
+	margin-bottom: 20px;
+	letter-spacing: 1px;	
+}	
+
+.btn{
+	display: inline-block;
+	background: #000;
+	color: #fff;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+
+.services{
+	
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 30px;
+	max-width: 100%;
+	margin-top: 40px;
+}
+
+.services .box{
+	width: 300px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 20px;
+	box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.services .box .iconBx{
+	margin-top: 25px;
+}
+
+.services .box .iconBx img {
+	max-width: 70px;
+	margin-bottom: 15px;
+}
+
+.services .box h2{
+	font-size: 18px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
 
 
 
