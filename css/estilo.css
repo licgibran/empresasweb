@@ -130,20 +130,22 @@ p{
 }
 
 .services{
-	
+
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap: 30px;
+	/* grid-template-columns: auto auto auto; crea 3 cols */
+	grid-gap: 30px; /* espacio entre celdas */
 	max-width: 100%;
 	margin-top: 40px;
 }
 
 .services .box{
 	width: 300px;
-	margin: 0 auto;
+	margin: 0 auto; /* 0 arriba y abajo, auto izquierda derecha (centra) */
 	background: #fff;
 	padding: 20px;
-	box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+	box-shadow:  0 15px 30px rgba(0,0,0,0.05); /* x y blur_radio color */
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Box-shadow_generator */
 }
 
 .services .box .iconBx{
@@ -162,9 +164,36 @@ p{
 	font-weight: 700;
 }
 
+.stats{
+	background: #000;
+	padding-top: 250px;
+	margin-top: -250px;
+}
 
+.stats h3,
+.stats p
+{
+	color: #fff;
+}
 
+.statsBox{
+	display:grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 20px;
+	max-width:100%;
+}
 
+.statsBox h2{
+	color: #fff;
+	font-size: 36px;
+}
+.statsBox h4{
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
 
 
 
