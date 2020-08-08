@@ -11,13 +11,15 @@
 	<header>
 		<a href="#" class="logo">Logo </a>
 		<ul>
-			<li><a href="#home">Inicio</a></li>
-			<li><a href="#about">Nosotros</a></li>
-			<li><a href="#services">Servicios</a></li>
-			<li><a href="#portfolio">Empresas </a></li>
-			<li><a href="#team">Team</a></li>
-			<li><a href="#contact">Contacto</a></li>
+			<li><a href="#home" onclick="toggle()">Inicio</a></li>
+			<li><a href="#about" onclick="toggle()">Nosotros</a></li>
+			<li><a href="#services" onclick="toggle()">Servicios</a></li>
+			<li><a href="#portfolio" onclick="toggle()">Empresas </a></li>
+			<li><a href="#team" onclick="toggle()">Team</a></li>
+			<li><a href="#contact" onclick="toggle()">Contacto</a></li>
 		</ul>
+		<div class="toggle" onClick="toggle()"></div>
+
 	</header>
 	<!-- Banner -->
 	<section class="banner" id="home">
@@ -235,6 +237,17 @@
 		</div>
 
 	</section>
+	<script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("sticky", window.scrollY > 0);
+		})
+		function toggle(){
+			var header = document.querySelector("header");
+			header.classList.toggle("active")
+
+		}
+	</script>
 
 </body>
 </html>
