@@ -151,8 +151,28 @@ p{
 .services{
 
 	display: grid;
+	
+	/* grid-template-columns: auto auto auto; /* crea 3 cols */
+	/* grid-template-columns: repeat(3, 33%); /*siempre 3 */
+	/* grid-template-columns: 1fr 1fr 1fr; /* equivale al anterior */
+	/*grid-template-columns: repeat(3, 1fr); /* equivale al anterior */
+	 	/* note que si reduce mucho el ancho de la pantalla no se ven los
+	 		tres elementos */
+
+	/* grid-template-columns: repeat(3, minmax(100px, 300px)); */
+		/* crea 3 columnas de ancho variable minimo 100 maximo 300 pixeles 
+		   note que a la derecha queda un espacio vacio grande */
+
+	/* grid-template-columns: repeat(3, minmax(100px, 1fr)); 
+		/* corrige lo del espacio vacio grande  */
+		/* siempre tiene 3 columnas por fila */
+
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	/* grid-template-columns: auto auto auto; crea 3 cols */
+		/* la cantidad de columnas variará */
+
+	
+
+
 	grid-gap: 30px; /* espacio entre celdas */
 	max-width: 100%;
 	margin-top: 40px;
@@ -163,7 +183,7 @@ p{
 	margin: 0 auto; /* 0 arriba y abajo, auto izquierda derecha (centra) */
 	background: #fff;
 	padding: 20px;
-	box-shadow:  0 15px 30px rgba(0,0,0,0.05); /* x y blur_radio color */
+	box-shadow:  0px 20px 25px rgba(0,0,0,0.5); /* x y blur_radio color */
 	/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Box-shadow_generator */
 }
 
@@ -186,7 +206,7 @@ p{
 .stats{
 	background: #000;
 	padding-top: 250px;
-	margin-top: -250px;
+	margin-top: -250px; 
 }
 
 .stats h3,
