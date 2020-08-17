@@ -11,14 +11,17 @@
 	<header>
 		<a href="#" class="logo">Logo </a>
 		<ul>
-			<li><a href="#home" onclick="toggle()">Inicio</a></li>
-			<li><a href="#about" onclick="toggle()">Nosotros</a></li>
-			<li><a href="#services" onclick="toggle()">Servicios</a></li>
-			<li><a href="#portfolio" onclick="toggle()">Empresas </a></li>
-			<li><a href="#team" onclick="toggle()">Team</a></li>
-			<li><a href="#contact" onclick="toggle()">Contacto</a></li>
+			<li><a href="#home" onclick="alternar()">Inicio</a></li>
+			<li><a href="#about" onclick="alternar()">Nosotros</a></li>
+			<li><a href="#services" onclick="alternar()">Servicios</a></li>
+			<li><a href="#portfolio" onclick="alternar()">Clientes </a></li>
+			<li><a href="#team" onclick="alternar()">Team</a></li>
+			<li><a href="#contact" onclick="alternar()">Contacto</a></li>
+			<!--
+			El evento onclick se ejecuta cuando damos click a un elemento del DOM en nuestro sitio, no necesariamente este debe ser un boton, puede ser un <div> u otro tag de html. Para incorporarlo en HTML basta con utilizar el atributo “onclick” en un elemento HTML y especificar el codigo o funcion de javascript a ejecutar. 
+			-->
 		</ul>
-		<div class="toggle" onClick="toggle()"></div>
+		<div class="toggle" onClick="alternar()"></div>
 
 	</header>
 	<!-- Banner -->
@@ -66,7 +69,7 @@
 						<img src="assets/icon3.png">
 					</div>
 					<div class="content">
-						<h2> Publicidad </h2>
+						<h2> Márketing </h2>
 						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ipsum qui odit dolor reprehenderit. </p>
 					</div>
 				</div>
@@ -204,13 +207,14 @@
 				</p>
 			</div>
 			<div class="contactForm">
-				<form>
+				<form id="form">
 					<div class="row100">
 						<div class="inputBx50">
 							<input type = "text" name="" placeholder="Nombre">
 						</div>
 						<div class="inputBx50">
-							<input type = "text" name="" placeholder="Email">
+							<input type = "text" name=""  id="email" placeholder="Email" onkeyup="validacion()">
+							<span id="text"></span>
 						</div>
 					</div>
 					<div class="row100">
@@ -242,12 +246,45 @@
 			var header = document.querySelector("header");
 			header.classList.toggle("sticky", window.scrollY > 0);
 		})
-		function toggle(){
+		/*
+		-Un Listener es un objeto creado dinámicamente por código que se utiliza para detectar eventos.
+		-addEventListener() Registra un evento a un objeto en específico.
+		-El objeto window representa la ventana del navegador
+		-Sintaxis: element.addEventListener(evento, funcion);
+		-"Suministro de una función anónima como un parámetro a otra función"
+		-Las variables declaradas se limitan al contexto de ejecución en el cual son declaradas. Las variables no declaradas siempre son globales.
+		-document.querySelector: Devuelve el primer elemento del documento que coincida con el grupo especificado de selectores.
+		-classList accede a la lista de clases de un elemento 
+		-toggle: Alterna el valor de la clase; si la clase existe la elimina,si no, la añade. Si el segundo argumento se evalúa como true, se añade la clase indicada, y si se evalúa como false, la elimina.
+		*/
+		function alternar(){
 			var header = document.querySelector("header");
-			header.classList.toggle("active")
+			header.classList.toggle("active");
+		}
+		function validacion(){
 
+			var form = document.getElementById("form");
+			var email = document.getElementById("email").value;
+			var text = document.getElementById("text")
+			var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+			if (email.match(pattern)){
+				
+				//form.classList.add("valid");
+				//form.classList.remove("invalid");
+				text.innerHTML = "Email válido";
+				 text.style.color = "#4978ff";
+			}
+			else{
+				
+				//form.classList.remove("valid");
+				//form.classList.add("invalid");
+				text.innerHTML = "Introduzca un email válido";
+				 text.style.color = "#ff0000";
+
+			}
 		}
 	</script>
+
 
 </body>
 </html>
