@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title> Sitio </title>
 	<link rel="stylesheet" href="css/estilo.css">
+	<script src="https://kit.fontawesome.com/d2bd4d63fd.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<!-- Header -->
@@ -237,6 +238,11 @@
 				</ul>
 			</div>
 		<p class="copyright"> Derechos reservados 2020 </p>
+		
+		<!-- Boton ir arriba -->
+		<div id="button-up">
+			<i class="fas fa-arrow-up"></i>
+		</div>
 
 		</div>
 
@@ -246,6 +252,18 @@
 			var header = document.querySelector("header");
 			header.classList.toggle("sticky", window.scrollY > 0);
 		})
+		buttonUp = document.getElementById("button-up");
+		buttonUp.addEventListener("click",scrollUp);
+		window.onscroll = function(){
+			var scroll = document.documentElement.scrollTop;
+			if (scroll > 200){
+				buttonUp.style.transform = "scale(1)";
+			}
+			else{
+				buttonUp.style.transform = "scale(0)";
+			}
+		}
+
 		/*
 		-Un Listener es un objeto creado dinámicamente por código que se utiliza para detectar eventos.
 		-addEventListener() Registra un evento a un objeto en específico.
@@ -283,6 +301,13 @@
 
 			}
 		}
+		function scrollUp(){
+			var currentScroll = document.documentElement.scrollTop;
+			if (currentScroll>0){
+				window.requestAnimationFrame(scrollUp);
+				window.scrollTo (0,currentScroll-(currentScroll/10));
+			}
+		}ç
 	</script>
 
 
